@@ -1,0 +1,133 @@
+<!-- templates/landing_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Smart Ring Accident Prediction</title>
+
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Add Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #808080; /* Grey background color */
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 80%;
+            max-width: 400px; /* Set a maximum width for better readability */
+            text-align: center;
+            transition: border-radius 1s ease-in-out;
+        }
+
+        .title-box {
+            background-color: #007bff; /* Title box color */
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .text-center h1 {
+            color: #ffffff; /* Title font color */
+            font-weight: bold;
+            font-size: 1.5rem; /* Adjust font size for better responsiveness */
+        }
+
+        .text-center p {
+            color: #6c757d;
+        }
+
+        .form-group label {
+            color: #495057;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #ffffff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* Add a subtle form animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        form {
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title-box">
+            <div class="text-center">
+                <h1 class="display-4">Smart Ring Accident Prediction</h1>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <p class="lead">A project to predict and prevent accidents using smart ring technology.</p>
+        </div>
+
+        <form action="{% url 'form_submission' %}" method="get">
+            <div class="form-group">
+                <label for="oxygenSaturation">Oxygen Saturation (%)</label>
+                <input type="text" class="form-control" id="oxygenSaturation" name="oxygen_saturation" required>
+            </div>
+
+            <div class="form-group">
+                <label for="heartRate">Heart Rate (bpm)</label>
+                <input type="text" class="form-control" id="heartRate" name="heart_rate" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery scripts here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Add a script to round the corners of the container after reloading
+        document.addEventListener('DOMContentLoaded', function () {
+            var container = document.querySelector('.container');
+            container.style.borderRadius = '10px';
+        });
+    </script>
+
+</body>
+
+</html>

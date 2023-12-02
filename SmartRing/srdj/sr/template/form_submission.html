@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Form Submission Result</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    /* Style the result text to be bold and larger */
+    .result-section p {
+      font-weight: bold;
+      font-size: 30px; /* Increased font size */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container mt-5">
+    <h1>User Input</h1>
+    <p class="lead">Oxygen Saturation: {{ oxygen_saturation }}</p>
+    <p class="lead">Heart Rate: {{ heart_rate }}</p>
+
+    <div class="result-section">
+      <h1>Smart Ring Prediction Result</h1>
+      {% if result == 'Normal' %}
+        <p class="lead text-success">Result is: {{ result }}</p>
+      {% elif result == 'Warning' %}
+        <p class="lead text-warning">Result is: {{ result }}</p>
+      {% else %}
+        <p class="lead text-danger">Result is: {{ result }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
